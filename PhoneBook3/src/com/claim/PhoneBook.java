@@ -63,6 +63,7 @@ public class PhoneBook
 		case 2:// Delete
 			arrayposition = SelectPersonFromPhoneBook();
 			DeletePersonFromPhoneBook(arrayposition);
+			saveArrayToFile();
 			break;
 		case 3:// Update
 			arrayposition = SelectPersonFromPhoneBook();
@@ -131,6 +132,7 @@ public class PhoneBook
 			persons[arrayposition].setFname(updatedString);
 			System.out.println(" ");
 			System.out.println(persons[arrayposition].toString());
+			saveArrayToFile();
 			break;
 		case 2:// Update Middle Name
 			System.out.println(" ");
@@ -138,6 +140,7 @@ public class PhoneBook
 			persons[arrayposition].setMname(updatedString);
 			System.out.println(" ");
 			System.out.println(persons[arrayposition].toString());
+			saveArrayToFile();
 			break;
 		case 3:// Update Last Name
 			System.out.println(" ");
@@ -145,6 +148,7 @@ public class PhoneBook
 			persons[arrayposition].setLname(updatedString);
 			System.out.println(" ");
 			System.out.println(persons[arrayposition].toString());
+			saveArrayToFile();
 			break;
 		case 4:// Update Telephone Number
 			System.out.println(" ");
@@ -152,13 +156,14 @@ public class PhoneBook
 			persons[arrayposition].setTelephone(updatedString);
 			System.out.println(" ");
 			System.out.println(persons[arrayposition].toString());
+			saveArrayToFile();
 			break;
 		case 5:// Update Street
 			System.out.println(" ");
 			updatedString = AskForNewUpdateString();
 			persons[arrayposition].getAddress().setStreet(updatedString);
 			System.out.println(" ");
-			System.out.println(persons[arrayposition].toString());
+			System.out.println(persons[arrayposition].toString());saveArrayToFile();
 			break;
 		case 6:// Update City
 			System.out.println(" ");
@@ -166,6 +171,7 @@ public class PhoneBook
 			persons[arrayposition].getAddress().setCity(updatedString);
 			System.out.println(" ");
 			System.out.println(persons[arrayposition].toString());
+			saveArrayToFile();
 			break;
 		case 7:// Update State
 			System.out.println(" ");
@@ -173,6 +179,7 @@ public class PhoneBook
 			persons[arrayposition].getAddress().setState(updatedString);
 			System.out.println(" ");
 			System.out.println(persons[arrayposition].toString());
+			saveArrayToFile();
 			break;
 		case 8:// Update Zip
 			System.out.println(" ");
@@ -180,6 +187,7 @@ public class PhoneBook
 			persons[arrayposition].getAddress().setZipcode(updatedString);
 			System.out.println(" ");
 			System.out.println(persons[arrayposition].toString());
+			saveArrayToFile();
 			break;
 		case 9:// Exit
 
