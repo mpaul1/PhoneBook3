@@ -7,6 +7,7 @@ public class Person implements Comparable
 	private String lname = "";
 	private String telephone = "";
 	private Address address;
+	private String printmname="";
 
 	public Person(String string)
 	{
@@ -87,11 +88,32 @@ public class Person implements Comparable
 	{
 		return fname + " " + mname + " " + lname;
 	}
+	
+	public String PrintMiddleName()
+	{
+		String printmname;
+		if (mname != "")
+		{
+			printmname = " "+mname+" ";
+		}
+		else
+		{
+			printmname = " ";
+		}
+		return printmname;
+
+	}
 
 	@Override
 	public String toString()
 	{
-		return fname + " " + mname + " " + lname + " " + telephone.replaceFirst("(\\d{3})(\\d{3})(\\d+)", "($1) $2-$3") + " " + address;
+		return fname + PrintMiddleName() + lname + ", " + address+", "+ telephone.replaceFirst("(\\d{3})(\\d{3})(\\d+)", "($1) $2-$3");
+
+	}
+	
+	public String toStringFileFormat()
+	{
+		return fname + PrintMiddleName()  + lname + ", " + address+", "+ telephone;
 
 	}
 	
