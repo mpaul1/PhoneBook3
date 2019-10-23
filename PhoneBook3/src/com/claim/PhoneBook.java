@@ -495,6 +495,10 @@ public class PhoneBook
 			e.printStackTrace();
 			System.out.println("File not Found.");
 		}
+		finally
+		{
+			
+		}
 //		try
 //		{
 //			FileOutputStream filepath = new FileOutputStream("C:\\Users\\mpaul\\Documents\\eclipse-workspace\\FileStorage\\phonebook.txt");
@@ -519,13 +523,16 @@ public class PhoneBook
 	{
 		try
 		{
+			
+			String line = "";
+			Scanner scanner3 = new Scanner(line);
 			BufferedReader reader = new BufferedReader(
 					new FileReader("C:\\Users\\mpaul\\Documents\\eclipse-workspace\\FileStorage\\phonebook.txt"));
-			String line = "";
+			
 			try
 			{
 				System.out.println("Loading contacts from file...");
-				Scanner scanner3 = new Scanner(line);
+//				Scanner scanner3 = new Scanner(line);
 				while ((line = reader.readLine()) != null)
 				{
 					for (String token : line.split("\\n"))
@@ -536,12 +543,23 @@ public class PhoneBook
 //						System.out.println("Add to Phonebook: "+person);
 					}
 				}
-				reader.close();
-				scanner3.close();
+
 			} catch (IOException e)
 			{
 				System.out.println("Error reading file data");
 //				e.printStackTrace();
+			}
+			finally
+			{
+				try
+				{
+					reader.close();
+				} catch (IOException e)
+				{
+					System.out.println("Error closing Scanner reading file lines.");
+					e.printStackTrace();
+				}
+				scanner3.close();
 			}
 		} catch (FileNotFoundException e)
 		{
